@@ -2,6 +2,7 @@ public class Driver {
   public static void main(String[] args) {
 
 //TEJAS DRIVER
+  System.out.println("Tejas's Driver (Thank you Tejas!)");
 
     String refStr = "antidisestablishmentarianism";
     MyString testStr = new MyString(refStr);
@@ -59,6 +60,9 @@ public class Driver {
     }
 
   //ETHAN Driver
+
+  System.out.println("\nEthan's Driver (Thank you Ethan!)\n");
+
   MyString b,d;
   String a,ca;
 
@@ -162,6 +166,7 @@ public class Driver {
   }
   System.out.println("Your code passed every test. Well done!");
 }
+
 
 private static String sgn(int i) {
   if (i > 0) return "something positive";
