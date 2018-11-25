@@ -5,8 +5,6 @@ public class Driver {
 
     String refStr = "antidisestablishmentarianism";
     MyString testStr = new MyString(refStr);
-    System.out.println(testStr);
-    System.out.println(testStr.subSequence(1,7));
     int c = 0;
     if (testStr.length() != refStr.length()) {
       System.out.println(++c + ". length() is " + testStr.length() + " instead of " + refStr.length());
@@ -40,6 +38,9 @@ public class Driver {
     }
 
     refStr += "abcd";
+
+    //System.out.println(testStr.length()); to debug
+    //System.out.println(refStr.length()); debugging purposes
 
     if (testStr.compareTo(refStr) >= 0) {
       System.out.println(++c + ". compareTo() should return a negative in this case");
