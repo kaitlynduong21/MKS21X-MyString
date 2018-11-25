@@ -137,13 +137,13 @@ public class Driver {
             return;
           }
         }
-      } /*
+      }
   // Testing MyString.compareTo()
     for (int j = 0; j < cases.length; j++) {
       ca = cases[j];
-      d = new MyString(c);
+      d = new MyString(ca);
       try {
-        if (Math.signum(a.compareTo(cq)) != Math.signum(b.compareTo(d))) {
+        if (Math.signum(a.compareTo(ca)) != Math.signum(b.compareTo(d))) {
           System.out.println("Unwanted Exception in compareTo()");
           System.out.println("\tInput:          \""+b+"\".compareTo(\""+d+"\")");
           System.out.println("\tDesired result: "+sgn(a.compareTo(ca)));
@@ -166,7 +166,6 @@ public class Driver {
 private static String sgn(int i) {
   if (i > 0) return "something positive";
   if (i < 0) return "something negative";
-  return "0"; */
+  return "0";
   }
-}
 }

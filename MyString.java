@@ -19,11 +19,14 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
   }
 
   public CharSequence subSequence(int start, int end){
-    if (start < 0 || end >= length() || start > end) {
+    if (start < 0 || end > length() || start > end) {
       throw new IndexOutOfBoundsException("Index out of bounds");
     }
     String sub = "";
-    for (int i = start; i < start + end - 1; i++) {
+    if (start == end) {
+      return sub;
+    }
+    for (int i = start; i < end; i++) {
       sub += charAt(i);
     }
     return sub;
