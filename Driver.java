@@ -5,6 +5,8 @@ public class Driver {
 
     String refStr = "antidisestablishmentarianism";
     MyString testStr = new MyString(refStr);
+    System.out.println(testStr);
+    System.out.println(testStr.subSequence(1,7));
     int c = 0;
     if (testStr.length() != refStr.length()) {
       System.out.println(++c + ". length() is " + testStr.length() + " instead of " + refStr.length());
@@ -33,7 +35,7 @@ public class Driver {
       System.out.println(++c + ". subSequence(1,7) is not " + refStr.subSequence(1,7));
     }
 
-    /*if (testStr.compareTo(refStr) != 0) {
+    if (testStr.compareTo(refStr) != 0) {
       System.out.println(++c + ". compareTo() should return 0 in this case");
     }
 
@@ -53,11 +55,11 @@ public class Driver {
       System.out.println("\nYour MyString passed all the tests. Good work!");
     } else {
       System.out.println("\nYour MyString failed " + c + " tests. Keep trying!");
-    }*/
+    }
 
   //ETHAN Driver
   MyString b,d;
-  String a,c;
+  String a,ca;
 
   // A list of test cases. Add anything to this list, and it will run through a complete test case on that MyString.
   String[] cases = {
@@ -134,23 +136,23 @@ public class Driver {
             return;
           }
         }
-      }
+      } /*
   // Testing MyString.compareTo()
     for (int j = 0; j < cases.length; j++) {
-      c = cases[j];
+      ca = cases[j];
       d = new MyString(c);
       try {
-        if (Math.signum(a.compareTo(c)) != Math.signum(b.compareTo(d))) {
+        if (Math.signum(a.compareTo(cq)) != Math.signum(b.compareTo(d))) {
           System.out.println("Unwanted Exception in compareTo()");
           System.out.println("\tInput:          \""+b+"\".compareTo(\""+d+"\")");
-          System.out.println("\tDesired result: "+sgn(a.compareTo(c)));
+          System.out.println("\tDesired result: "+sgn(a.compareTo(ca)));
           System.out.println("\tYour result:    "+sgn(b.compareTo(d)));
           return;
         }
       } catch (Exception e) {
         System.out.println("Unwanted Exception in compareTo()");
         System.out.println("\tInput:          \""+b+"\", \""+d+"\"");
-        System.out.println("\tDesired result: "+sgn(a.compareTo(c)));
+        System.out.println("\tDesired result: "+sgn(a.compareTo(ca)));
         System.out.println("\nStack Trace:\n");
         e.printStackTrace();
         return;
@@ -163,6 +165,7 @@ public class Driver {
 private static String sgn(int i) {
   if (i > 0) return "something positive";
   if (i < 0) return "something negative";
-  return "0";
+  return "0"; */
   }
+}
 }

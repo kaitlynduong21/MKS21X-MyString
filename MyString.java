@@ -9,10 +9,9 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
 
   public char charAt(int index) {
     if (index < 0 || index > length()) {
-      throw new IndexOutofBoundsException("Index cannot be " + index);
-    } else {
-      return data[index];
+      throw new IndexOutOfBoundsException("Index cannot be " + index);
     }
+    return data[index];
   }
 
   public int length() {
@@ -21,10 +20,10 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
 
   public CharSequence subSequence(int start, int end){
     if (start < 0 || end > length() || start > end) {
-      throw new IndexOutofBoundsException("Index out of bounds");
+      throw new IndexOutOfBoundsException("Index out of bounds");
     }
     String sub = "";
-    for (int i = start; i < length() - end; i++) {
+    for (int i = start; i < start + end - 1; i++) {
       sub += charAt(i);
     }
     return sub;
@@ -36,5 +35,17 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
       s += charAt(i);
   }
   return s;
+}
+
+public int compareTo(CharSequence s) {
+  for (int i = 0; i < s.length() || i < this.length(); i ++) {
+    if (s.charAt(i) > this.charAt(i)) {
+      return -1;
+    }
+    if (s.charAt(i) < this.charAt(i)) {
+      return 1;
+    }
+  }
+  return 0;
 }
 }
