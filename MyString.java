@@ -8,30 +8,30 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
   }
 
   public char charAt(int index) {
-    try {
-      return
-    } catch (IndexOutofBoundsException e) {
-      System.out.println("The index is out of bounds");
+    if (index < 0 || index > length()) {
+      throw new IndexOutofBoundsException("Index cannot be " + index);
+    } else {
+      return data[index];
     }
   }
 
   public int length() {
+    return data.length;
   }
 
   public CharSequence subSequence(int start, int end){
-    try {
-    CharSequence sub = new CharSequence[end - start];
-    for (int i = start; i < data.length - end; i++) {
+    if (start < 0 || end > length() || start > end) {
+      throw new IndexOutofBoundsException("Index out of bounds");
+    }
+    String sub = "";
+    for (int i = start; i < length() - end; i++) {
       sub += charAt(i);
     }
     return sub;
-  } catch (IndexOutofBoundsException e){ //to make sure start, end are not negative, end is not greater than the length, start is not greater than the end
-    System.out.println("The index is out of bounds");
-  }
   }
 
   public String toString() {
-    String s = new String ();
+    String s = "";
     for (int i = 0; i < data.length; i++) {
       s += charAt(i);
   }
