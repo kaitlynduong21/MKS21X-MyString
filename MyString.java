@@ -10,8 +10,9 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
   public char charAt(int index) {
     if (index < 0 || index >= length()) { //if index is out of bounds
       throw new IndexOutOfBoundsException("Index cannot be " + index);
-    }
+    } else {
     return data[index];
+  }
   }
 
   public int length() {
@@ -23,9 +24,6 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
       throw new IndexOutOfBoundsException("Index out of bounds"); //if index is out of bounds
     }
     String sub = "";
-    if (start == end) { //accounts for whenever the start and end are the same in which case the subSequence would be empty
-      return sub;
-    }
     for (int i = start; i < end; i++) {
       sub += charAt(i);
     }
@@ -41,15 +39,18 @@ public class MyString implements CharSequence,Comparable<CharSequence>{
 }
 
 public int compareTo(CharSequence s) {
+  if (data == null) {
+    throw new NullPointerException(); //throw exception
+  }
   for (int i = 0; i < s.length() && i < this.length() ; i ++) {
     //System.out.println(i); to debug
     if (s.charAt(i) > this.charAt(i)) {
-      return -1;
+      return this.charAt(i) - s.charAt(i);
     }
     if (s.charAt(i) < this.charAt(i)) {
-      return 1;
+      return this.charAt(i) - s.charAt(i);
     }
   }
-  return this.length() - s.length();
+  return this.length() - s.length();//returns difference in length, if same lenght returns 0
 }
 }
